@@ -1,10 +1,16 @@
+
+
 import java.util.*;
+import java.util.concurrent.Callable;
 import java.io.*;
+
 
 public class EmpServ implements EmpServices {
 
 	ArrayList<Emp> EmpList = new ArrayList<Emp>();
 	Scanner sc = new Scanner(System.in);
+	
+	
 
 	@Override
 	public void addUser() {
@@ -82,7 +88,7 @@ public class EmpServ implements EmpServices {
 	@Override
 	public void importEmp() throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		File file= new File("C:\\Training\\ibm-fsd-backend\\assignments\\corejava\\employee-mgmt-app01\\src\\import.txt");
+		File file= new File("C:\\Training\\ibm-fsd-backend\\assignments\\corejava\\employee-mgmt-app01\\src\\export.txt");
 		Scanner sc= new Scanner(file);
 		String s;
 	
@@ -92,8 +98,8 @@ public class EmpServ implements EmpServices {
 		s=sc.nextLine();
 		System.out.println(s);
 		String[] str= s.split(",");
-		n.setEmpId(( Integer.parseInt(str[1])));
-		n.setEmpName(str[0]);
+		n.setEmpId(( Integer.parseInt(str[0])));
+		n.setEmpName(str[1]);
 		n.setSalary(Float.parseFloat(str[2]));
 		EmpList.add(n);
 	    }
@@ -130,6 +136,12 @@ public class EmpServ implements EmpServices {
 	
 	
 	
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

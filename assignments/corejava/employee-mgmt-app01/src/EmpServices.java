@@ -6,6 +6,7 @@ public interface EmpServices {
 	void removeUser();
 	void viewAll();
 	void view();
+	void update();
 	void importEmp() throws FileNotFoundException;
 	void exportEmp() throws IOException;
 	
