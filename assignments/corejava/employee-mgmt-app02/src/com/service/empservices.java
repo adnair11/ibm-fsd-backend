@@ -39,25 +39,9 @@ public class empservices implements serviceinterface {
 	}
 
 	@Override
-	public void removeUser() {
-		// TODO Auto-generated method stub
-//		System.out.println("ENTER ID of the employee to remove");
-//		Scanner sc= new Scanner(System.in);
-//		int id=sc.nextInt();
-//		int t = -1;
-//		for(int i=0;i<EmpList.size();i++)
-//		{
-//			if(id==EmpList.get(i).EmpId)
-//				t=i;
-//		}
-//		System.out.println("Index" + t);
-//		if(t!=-1)
-//		EmpList.remove(t);
-//		else
-//		System.out.println("FAILED TO REMOVE ID NOT FOUND");
-//		
-//		
-		
+	public void removeUser() throws SQLException {
+		System.out.println("Enter ID to delete");
+   db.deleteById(sc.nextInt());
 
 	}
 
@@ -71,26 +55,11 @@ public class empservices implements serviceinterface {
 	}
 
 	@Override
-	public void view() {
-		// TODO Auto-generated method stub
-//		System.out.println("Enter the id to view employee");
-////		System.out.println("ENTER ID of the employee to remove");
-//		Scanner sc= new Scanner(System.in);
-//		int id=sc.nextInt();
-//		int t = -1;
-//		for(int i=0;i<EmpList.size();i++)
-//		{
-//			if(id==EmpList.get(i).EmpId)
-//				t=i;
-//		}
-////		System.out.println("Index" + t);
-//		if(t!=-1)
-//			System.out.format("%5d %5s %5f \n" ,EmpList.get(t).getEmpId(),EmpList.get(t).getEmpName(),EmpList.get(t).getSalary() );
-//		else
-//		System.out.println("FAILED TO REMOVE ID NOT FOUND");
-//		
-//		
-//		
+	public void view() throws SQLException {
+		
+		System.out.println("ENTER ID to search");
+		int i=sc.nextInt();
+		db.viewById(i);
 
 		
 

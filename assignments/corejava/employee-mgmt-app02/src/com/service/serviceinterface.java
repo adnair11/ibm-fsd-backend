@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public interface serviceinterface {
 	void addUser() throws SQLException;
-	void removeUser();
+	void removeUser() throws SQLException;
 	void viewAll() throws SQLException;
-	void view();
+	void view() throws SQLException;
 	void update();
 	void importEmp() throws FileNotFoundException;
 	void exportEmp() throws IOException;

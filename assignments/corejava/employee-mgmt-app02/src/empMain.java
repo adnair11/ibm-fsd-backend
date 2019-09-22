@@ -49,10 +49,12 @@ public class empMain {
 					
 					break;
 				case 3:
+					es.view();
 					
 					break;
 				case 4:
 					
+					es.removeUser();
 					
 					break;
 				case 5:

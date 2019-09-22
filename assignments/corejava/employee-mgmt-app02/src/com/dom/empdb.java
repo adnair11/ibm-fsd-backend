@@ -84,6 +84,40 @@ public class empdb {
 		
 	}
 	
+	public void viewById(int id) throws SQLException
+	{
+		String insertQueryForPrepareStmt = "Select * from em where id=?";
+		pstmt = conn.prepareStatement(insertQueryForPrepareStmt);
+		pstmt.setInt(1, id);
+		
+		rs = pstmt.executeQuery();
+		while(rs.next())
+		{
+		System.out.println("HELOOOO");
+		int x=rs.getInt("id");
+		String name=rs.getString("name");
+		String desig=rs.getString("designation");
+		String com=rs.getString("company");
+		
+		
+		System.out.format("\t%d \t%s \t%s \t%s \n", x,  name, desig,  com);
+		}
+		pstmt.close();
+		
+		
+	}
+	
+	public void deleteById(int id ) throws SQLException
+	{
+		
+		String deleteQuery = "DELETE FROM em WHERE id = ?";
+		pstmt = conn.prepareStatement(deleteQuery);
+		pstmt.setInt(1, id);
+		int deleteCount = pstmt.executeUpdate();
+		pstmt.close();
+		System.out.println(deleteCount + " Employee(s) deleted");
+	}
+	
 	
 	
 	
